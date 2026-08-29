@@ -1,0 +1,476 @@
+/* =========================
+   GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+    font-family: inherit;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    height: 70px;
+    padding: 0 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: #181818;
+    border-bottom: 1px solid #333;
+}
+
+nav h2 {
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+nav a {
+    color: #ddd;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: white;
+}
+
+nav select {
+    background-color: #222;
+    color: white;
+    border: 1px solid #555;
+    padding: 7px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home {
+    min-height: 100vh;
+    padding: 50px;
+}
+
+.home h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+input[type="text"] {
+    display: block;
+
+    width: 350px;
+    max-width: 90%;
+
+    margin: 0 auto 40px;
+
+    padding: 13px 16px;
+
+    background-color: #222;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 5px;
+
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+
+/* =========================
+   MOVIE GRID
+========================= */
+
+.movie-grid {
+    width: 90%;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* =========================
+   MOVIE CARD
+========================= */
+
+.movie-card {
+    background-color: #1c1c1c;
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 380px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.movie-card h3 {
+    padding: 15px;
+
+    font-size: 18px;
+
+    color: white;
+}
+
+
+/* =========================
+   MOVIE DETAILS
+========================= */
+
+.movie-details {
+    width: 85%;
+    max-width: 1100px;
+
+    margin: 50px auto;
+
+    display: flex;
+    gap: 40px;
+}
+
+.movie-details img {
+    width: 300px;
+
+    border-radius: 8px;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-info h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.movie-info p {
+    line-height: 1.7;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+    background-color: white;
+    color: black;
+
+    border: none;
+
+    padding: 11px 20px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ccc;
+}
+
+
+/* =========================
+   WATCHLIST
+========================= */
+
+.watchlist {
+    min-height: 100vh;
+
+    padding: 50px;
+}
+
+.watchlist h1 {
+    text-align: center;
+
+    margin-bottom: 40px;
+
+    font-size: 38px;
+}
+
+.watchlist .movie-grid > div {
+    text-align: center;
+}
+
+.watchlist .movie-grid button {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   FEEDBACK FORM
+========================= */
+
+.feedback-form {
+    width: 85%;
+    max-width: 700px;
+
+    margin: 60px auto;
+
+    padding: 30px;
+
+    background-color: #1b1b1b;
+
+    border: 1px solid #333;
+
+    border-radius: 8px;
+}
+
+.feedback-form h2 {
+    margin-bottom: 25px;
+}
+
+.feedback-form form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.feedback-form label {
+    margin-top: 10px;
+
+    color: #ddd;
+
+    font-weight: bold;
+}
+
+.feedback-form input,
+.feedback-form textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    background-color: #222;
+
+    color: white;
+
+    border: 1px solid #555;
+
+    border-radius: 5px;
+
+    outline: none;
+}
+
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+    border-color: white;
+}
+
+.feedback-form textarea {
+    min-height: 130px;
+
+    resize: vertical;
+}
+
+.feedback-form form > p {
+    text-align: right;
+
+    color: #888;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FEEDBACK LIST
+========================= */
+
+.feedback-list {
+    width: 85%;
+    max-width: 700px;
+
+    margin: 40px auto 70px;
+}
+
+.feedback-list h2 {
+    margin-bottom: 20px;
+}
+
+.feedback-item {
+    background-color: #1b1b1b;
+
+    border: 1px solid #333;
+
+    border-radius: 7px;
+
+    padding: 20px;
+
+    margin-bottom: 15px;
+}
+
+.feedback-item p {
+    margin-bottom: 10px;
+
+    color: #ccc;
+}
+
+.feedback-item strong {
+    color: white;
+}
+
+
+/* =========================
+   RTL SUPPORT
+========================= */
+
+[dir="rtl"] {
+    text-align: right;
+}
+
+[dir="rtl"] nav div {
+    flex-direction: row-reverse;
+}
+
+[dir="rtl"] .feedback-form form > p {
+    text-align: left;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .movie-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .movie-details {
+        width: 90%;
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    nav {
+        padding: 0 20px;
+    }
+
+    nav div {
+        gap: 10px;
+    }
+
+    .home,
+    .watchlist {
+        padding: 30px 15px;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+    }
+
+    .movie-card img {
+        height: 300px;
+    }
+
+    .movie-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .movie-details img {
+        width: 250px;
+    }
+
+    .feedback-form,
+    .feedback-list {
+        width: 95%;
+    }
+}
+
+
+@media (max-width: 450px) {
+
+    nav {
+        height: auto;
+
+        padding: 15px;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .movie-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .movie-card img {
+        height: 400px;
+    }
+
+    input[type="text"] {
+        width: 90%;
+    }
+}
